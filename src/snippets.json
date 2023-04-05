@@ -1,0 +1,39 @@
+{
+    "snippets": [
+        {
+            "name": "Regex Email",
+            "content": "([A-Za-z]+(?:-[A-Za-z]+)*.[A-Za-z]+(?:-[A-Za-z]+)*@[A-Za-z0-9.-]+.[A-Za-z]+)",
+            "tags": ["regex"]
+        },
+        {
+            "name": "Local Users",
+            "content": "lusrmgr.msc",
+            "tags": ["command"]
+        },
+        {
+            "name": "Device Manager",
+            "content": "devmgmt.msc",
+            "tags": ["command"]
+        },
+        {
+            "name": "DDS SG",
+            "content": "GSG-FS-EMEA-GB-GBKENIAPSSC0002-DDSPROD-RO",
+            "tags": ["Security Group"]
+        },
+        {
+            "name": "Password change",
+            "content": "https://account.activedirectory.windowsazure.com/ChangePassword.aspx",
+            "tags": ["link"]
+        },
+        {
+            "name": "MFA Config",
+            "content": "https://mysignins.microsoft.com/security-info",
+            "tags": ["link"]
+        },
+        {
+            "name": "Reset System Update Mac",
+            "content": "sudo softwareupdate -i -a -R",
+            "tags": ["command"]
+        }
+    ]
+}
