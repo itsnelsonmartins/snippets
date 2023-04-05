@@ -3,7 +3,7 @@ import MarkdownGrid from './components/component.MarkdownGrid';
 import Search from './components/component.Search';
 import Footer from './components/component.Footer';
 import Sidebar from './components/component.Sidebar';
-
+import logo from '/icon.svg';
 import snippetsData from './snippets.json';
 
 const App = () => {
@@ -25,7 +25,7 @@ const App = () => {
     return (
         <div className='app'>
             <header>
-                <img src='/icon.svg' />
+                <img src={logo} />
                 <Search value={filterInput} onChange={handleFilterChange} />
             </header>
             <div className='container'>
