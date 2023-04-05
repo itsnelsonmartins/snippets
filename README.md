@@ -2,6 +2,10 @@
 
 This is a react app that displays a grid of personalized snippets.
 
+## Live Demo
+
+https://itsnelsonmartins.github.io/snippets/
+
 ## Installation
 
 To install the app, clone this repository and run the following command in your terminal:
@@ -53,3 +57,5 @@ This app uses the following dependencies:
 React
 Vite
 ```
+
+
