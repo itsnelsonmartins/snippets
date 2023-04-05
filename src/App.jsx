@@ -25,7 +25,7 @@ const App = () => {
     return (
         <div className='app'>
             <header>
-                <img src={logo} />
+                <img src={logo} alt='logo' />
                 <Search value={filterInput} onChange={handleFilterChange} />
             </header>
             <div className='container'>
