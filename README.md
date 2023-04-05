@@ -52,5 +52,4 @@ This app uses the following dependencies:
 ```
 React
 Vite
-Sass
 ```
