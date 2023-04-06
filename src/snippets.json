@@ -34,6 +34,11 @@
             "name": "Reset System Update Mac",
             "content": "sudo softwareupdate -i -a -R",
             "tags": ["command"]
+        },
+        {
+            "name": "Admin Rights",
+            "content": "GSG-APP-U-AdminRights-Grant",
+            "tags": ["Security Group"]
         }
     ]
 }
