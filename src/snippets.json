@@ -16,9 +16,9 @@
             "tags": ["command"]
         },
         {
-            "name": "DDS SG",
+            "name": "DDS/Daisy SG",
             "content": "GSG-FS-EMEA-GB-GBKENIAPSSC0002-DDSPROD-RO",
-            "tags": ["Security Group"]
+            "tags": ["security group"]
         },
         {
             "name": "Password change",
@@ -38,7 +38,57 @@
         {
             "name": "Admin Rights",
             "content": "GSG-APP-U-AdminRights-Grant",
-            "tags": ["Security Group"]
+            "tags": ["security group"]
+        },
+        {
+            "name": "MediaOcean Spotdashboard",
+            "content": "http://tvdashboard.spectra.mediaocean.com/spotprocessor-dashboard/Publish.htm",
+            "tags": ["link"]
+        },
+        {
+            "name": "Apps Repo",
+            "content": "\\\\na1prscmw2093v\\Content\\Apps",
+            "tags": ["repository"]
+        },
+        {
+            "name": "DDS/Daisy Repo Install",
+            "content": "\\\\gbkeniapssc0002\\Repository_Live\\Latest install",
+            "tags": ["repository"]
+        },
+        {
+            "name": "DDS/Daisy Repo",
+            "content": "\\\\gbkeniapssc0002\\Repository_Live",
+            "tags": ["repository"]
+        },
+        {
+            "name": "DDS/Daisy Repo Spark",
+            "content": "\\\\gbkeniapssc0002\\Repository_Blue_Live",
+            "tags": ["repository"]
+        },
+        {
+            "name": "Activate Windows License",
+            "content": "slmgr -ato",
+            "tags": ["command"]
+        },
+        {
+            "name": "Creston Code - Split Screen",
+            "content": "1988",
+            "tags": ["command"]
+        },
+        {
+            "name": "Show mapped drives",
+            "content": "net use",
+            "tags": ["command"]
+        },
+        {
+            "name": "Get computer uuid",
+            "content": "wmic path win32_computersystemproduct get uuid",
+            "tags": ["command"]
+        },
+        {
+            "name": "Get computer serial number",
+            "content": "wmic bios get serialnumber",
+            "tags": ["command"]
         }
     ]
 }
