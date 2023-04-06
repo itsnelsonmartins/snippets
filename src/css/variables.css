@@ -3,6 +3,7 @@ html {
     --brand-hue: 200;
     --brand-saturation: 100%;
     --brand-lightness: 50%;
+    --white: #fff;
 }
 
 :root {

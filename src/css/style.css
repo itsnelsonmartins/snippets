@@ -93,8 +93,8 @@ main {
     display: inline;
     margin-right: 0.5rem;
     font-size: 0.75rem;
-    font-style: italic;
-    color: var(--brand);
+    font-style: bold;
+    color: var(--white);
 }
 
 .modal {
