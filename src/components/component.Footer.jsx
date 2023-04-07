@@ -1,9 +1,11 @@
 import React from 'react';
+import coffee from '/coffee.svg';
 
 const Footer = () => {
     return (
         <footer>
-            <p>made on caffeine</p>
+            <span>made on</span>
+            <img src={coffee} alt='coffee mug' />
         </footer>
     );
 };

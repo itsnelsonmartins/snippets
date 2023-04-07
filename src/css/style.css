@@ -147,3 +147,8 @@ footer {
     align-items: center;
     justify-content: right;
 }
+
+footer img {
+    height: 1rem;
+    margin-left: 5px;
+}
