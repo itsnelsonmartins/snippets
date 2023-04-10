@@ -14,7 +14,7 @@ const Search = () => {
     };
 
     return (
-        <p class='control is-expanded'>
+        <>
             <input
                 className='input'
                 type='text'
@@ -22,7 +22,7 @@ const Search = () => {
                 placeholder='Filter...'
                 onChange={handleChange}
             />
-        </p>
+        </>
     );
 };
 

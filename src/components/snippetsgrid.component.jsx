@@ -22,7 +22,7 @@ const SnippetsGrid = ({ data }) => {
     return (
         <div className='columns is-multiline'>
             {filteredSnippets.map((file, index) => (
-                <div className='column is-6' key={index}>
+                <div className='column is-4' key={index}>
                     <div className='box'>
                         <p className='title desc'>{file.name}</p>
                         <pre className='hasContent'>

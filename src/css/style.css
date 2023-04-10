@@ -29,9 +29,8 @@ a.menu-item {
     margin-top: 10px;
 }
 
-.active {
-    background-color: var(--brand);
-    color: var(--text1);
+.input {
+    min-width: 90vw;
 }
 
 pre {
