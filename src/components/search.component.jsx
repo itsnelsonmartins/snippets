@@ -2,26 +2,27 @@ import { useContext } from 'react';
 import { ContextApi } from '../ContextApi';
 
 const Search = () => {
-    const { search, setSearch } = useContext(ContextApi);
+    const { search } = useContext(ContextApi);
+    const [searchValue, setSearchValue] = search;
 
     const submitHandler = (e) => {
         e.preventDefault();
     };
 
     const handleChange = (e) => {
-        setSearch(e.target.value);
+        setSearchValue(e.target.value);
     };
 
     return (
-        <form action='' onSubmit={submitHandler}>
+        <p class='control is-expanded'>
             <input
                 className='input'
                 type='text'
-                value={search}
+                value={searchValue}
                 placeholder='Filter...'
                 onChange={handleChange}
             />
-        </form>
+        </p>
     );
 };
 

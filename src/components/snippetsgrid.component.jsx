@@ -2,41 +2,43 @@ import { useContext } from 'react';
 import { ContextApi } from '../ContextApi';
 
 const SnippetsGrid = ({ data }) => {
-    const { search, setSearch } = useContext(ContextApi);
+    const { search, theme } = useContext(ContextApi);
+    const [searchValue, setSearchValue] = search;
+    const [themeValue, setThemeValue] = theme;
 
-    const filteredSnippets = search
+    const filteredSnippets = searchValue
         ? data.snippets.filter(
               (file) =>
-                  file.name.toLowerCase().includes(search.toLowerCase()) ||
-                  file.content.toLowerCase().includes(search.toLowerCase()) ||
+                  file.name.toLowerCase().includes(searchValue.toLowerCase()) ||
+                  file.content
+                      .toLowerCase()
+                      .includes(searchValue.toLowerCase()) ||
                   file.tags.some((tag) =>
-                      tag.toLowerCase().includes(search.toLowerCase())
+                      tag.toLowerCase().includes(searchValue.toLowerCase())
                   )
           )
         : data.snippets;
 
     return (
-        <>
+        <div className='columns is-multiline'>
             {filteredSnippets.map((file, index) => (
-                <div
-                    className='markdown-cell rad-shadow'
-                    key={index}
-                    onClick={() => {
-                        setAlertIndex(index);
-                        navigator.clipboard.writeText(file.content);
-                    }}>
-                    <p className='title'>{file.name}</p>
-                    <p>{file.content}</p>
-                    <div>
-                        {file.tags.map((tag, tagIndex) => (
-                            <p className='tag' key={tagIndex}>
-                                #{tag}
-                            </p>
-                        ))}
+                <div className='column is-6' key={index}>
+                    <div className='box'>
+                        <p className='title desc'>{file.name}</p>
+                        <pre className='hasContent'>
+                            <code>{file.content}</code>
+                        </pre>
+                        <div>
+                            {file.tags.map((tag, tagIndex) => (
+                                <p className='tag is-dark' key={tagIndex}>
+                                    #{tag}
+                                </p>
+                            ))}
+                        </div>
                     </div>
                 </div>
             ))}
-        </>
+        </div>
     );
 };
 

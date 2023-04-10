@@ -1,7 +1,40 @@
-.navigation {
+html {
     background-color: var(--surface1);
 }
 
-.logo {
+.navbar {
+    background-color: var(--text1);
+}
+
+p.logo {
+    color: var(--surface1);
+    font-weight: bold;
+}
+
+p.desc {
+    color: var(--text2);
+}
+
+.box {
+    background-color: var(--surface3);
+}
+
+.menu-label,
+a.menu-item {
     color: var(--text1);
+}
+
+.tag {
+    margin-top: 10px;
+}
+
+.active {
+    background-color: var(--brand);
+    color: var(--text1);
+}
+
+pre {
+    background-color: var(--surface2);
+    color: var(--text1);
+    border-radius: 0.25rem;
 }
