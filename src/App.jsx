@@ -1,40 +1,47 @@
-import React, { useState } from 'react';
-import MarkdownGrid from './components/component.MarkdownGrid';
-import Search from './components/component.Search';
-import Footer from './components/component.Footer';
-import Sidebar from './components/component.Sidebar';
-import logo from '/logo.svg';
+import { useEffect, useContext } from 'react';
+import { ContextApi } from './ContextApi';
+
+import MarkdownGrid from './components/snippetsgrid.component';
+import Search from './components/search.component';
+import Sidebar from './components/sidebar.component';
 import snippetsData from './snippets.json';
 
 const App = () => {
-    const [filterInput, setFilterInput] = useState('');
+    const { search } = useContext(ContextApi);
+    const [searchValue, setSearchValue] = search;
 
-    const handleFilterChange = (e) => {
-        setFilterInput(e.target.value);
-    };
+    // const handleFilter = (tag) => {
+    //     setFilterInput(tag);
+    // };
 
-    const handleFilter = (tag) => {
-        setFilterInput(tag);
-    };
-
-    const tags = snippetsData.snippets
-        .flatMap((snippet) => snippet.tags)
-        .filter((tag, index, self) => self.indexOf(tag) === index)
-        .sort();
+    // const tags = snippetsData.snippets
+    //     .flatMap((snippet) => snippet.tags)
+    //     .filter((tag, index, self) => self.indexOf(tag) === index)
+    //     .sort();
 
     return (
         <div className='app'>
-            <header>
-                <img src={logo} alt='logo' />
-                <Search value={filterInput} onChange={handleFilterChange} />
+            <section className='hero navigation'>
+                <div className='hero-body'>
+                    <div className='columns'>
+                        <div className='column is-1'>
+                            <p className='title logo'>Snips!</p>
+                        </div>
+                        <div className='column is-11'>
+                            <Search />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {/* <header>
+                <Search/>
             </header>
             <div className='container'>
                 <Sidebar tags={tags} handleFilter={handleFilter} />
                 <main>
                     <MarkdownGrid data={snippetsData} filter={filterInput} />
                 </main>
-            </div>
-            <Footer />
+            </div> */}
         </div>
     );
 };

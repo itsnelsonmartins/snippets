@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Modal from './component.Modal';
 
 const MarkdownGrid = ({ data, filter }) => {
     const [alertIndex, setAlertIndex] = useState(-1);
@@ -32,7 +31,6 @@ const MarkdownGrid = ({ data, filter }) => {
                         setAlertIndex(index);
                         navigator.clipboard.writeText(file.content);
                     }}>
-                    {alertIndex === index && <Modal placeholder={`Copied!`} />}
                     <p className='title'>{file.name}</p>
                     <p>{file.content}</p>
                     <div>
