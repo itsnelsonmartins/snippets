@@ -1,4 +1,4 @@
-import { useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import { ContextApi } from '../ContextApi';
 
 const Search = () => {
@@ -17,6 +17,7 @@ const Search = () => {
             <input
                 className='input'
                 type='text'
+                value={search}
                 placeholder='Filter...'
                 onChange={handleChange}
             />

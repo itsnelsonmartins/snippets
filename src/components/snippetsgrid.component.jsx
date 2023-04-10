@@ -1,22 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import { useContext } from 'react';
+import { ContextApi } from '../ContextApi';
 
-const MarkdownGrid = ({ data, filter }) => {
-    const [alertIndex, setAlertIndex] = useState(-1);
+const SnippetsGrid = ({ data }) => {
+    const { search, setSearch } = useContext(ContextApi);
 
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            setAlertIndex(-1);
-        }, 1500);
-        return () => clearTimeout(timeout);
-    }, [alertIndex]);
-
-    const filteredSnippets = filter
+    const filteredSnippets = search
         ? data.snippets.filter(
               (file) =>
-                  file.name.toLowerCase().includes(filter.toLowerCase()) ||
-                  file.content.toLowerCase().includes(filter.toLowerCase()) ||
+                  file.name.toLowerCase().includes(search.toLowerCase()) ||
+                  file.content.toLowerCase().includes(search.toLowerCase()) ||
                   file.tags.some((tag) =>
-                      tag.toLowerCase().includes(filter.toLowerCase())
+                      tag.toLowerCase().includes(search.toLowerCase())
                   )
           )
         : data.snippets;
@@ -46,4 +40,4 @@ const MarkdownGrid = ({ data, filter }) => {
     );
 };
 
-export default MarkdownGrid;
+export default SnippetsGrid;
