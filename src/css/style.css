@@ -4,6 +4,7 @@ html {
 
 .navbar {
     background-color: var(--text1);
+    height: 5rem;
 }
 
 p.logo {
@@ -42,4 +43,12 @@ a.menu-item {
 
 .box {
     cursor: pointer;
+}
+
+.info {
+    padding: 0.25rem;
+    border-radius: 10px;
+    background-color: var(--surface4);
+    color: var(--text1);
+    margin-left: 5px;
 }

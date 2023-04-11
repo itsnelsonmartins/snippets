@@ -29,10 +29,6 @@ const SnippetsGrid = ({ data }) => {
     const copyCode = (content) => {
         const code = document.querySelector('.hasContent');
         navigator.clipboard.writeText(content);
-        // code.style.backgroundColor = 'var(--brand)';
-        // setTimeout(() => {
-        //     code.style.backgroundColor = 'var(--surface2)';
-        // }, '1000');
     };
 
     return (
@@ -47,7 +43,9 @@ const SnippetsGrid = ({ data }) => {
                         }}>
                         <p className='title is-5 desc'>
                             {file.name}
-                            {alertIndex === index && ` Copied!`}
+                            {alertIndex === index && (
+                                <span className='info'>Copied!</span>
+                            )}
                         </p>
                         <pre className='hasContent'>
                             <code>{file.content}</code>
