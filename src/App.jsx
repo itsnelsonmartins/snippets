@@ -10,7 +10,6 @@ import snippetsData from './snippets.json';
 const App = () => {
     const { search, theme } = useContext(ContextApi);
     const [searchValue, setSearchValue] = search;
-    const [themeValue, setThemeValue] = theme;
 
     const tags = snippetsData.snippets
         .flatMap((snippet) => snippet.tags)
@@ -22,10 +21,10 @@ const App = () => {
             <Search />
             <section className='section'>
                 <div className='columns'>
-                    <div className='column is-2'>
+                    <div className='column is-1'>
                         <Sidebar tags={tags} />
                     </div>
-                    <div className='column is-10'>
+                    <div className='column is-11'>
                         <SnippetsGrid data={snippetsData} />
                     </div>
                 </div>

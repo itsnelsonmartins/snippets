@@ -4,8 +4,9 @@ import { ContextApi } from '../ContextApi';
 import hc from '/hc.svg';
 
 const Search = () => {
-    const { search } = useContext(ContextApi);
+    const { search, theme } = useContext(ContextApi);
     const [searchValue, setSearchValue] = search;
+    const [themeValue, setThemeValue] = theme;
 
     const handleChange = (e) => {
         setSearchValue(e.target.value);
@@ -13,13 +14,13 @@ const Search = () => {
 
     // ThemeChanger function to change between dar and light mode
     const themeChanger = () => {
-        // if (themeValue === 'light') {
-        //     document.firstElementChild.setAttribute('color-scheme', 'dark');
-        //     setThemeValue('dark');
-        // } else {
-        //     document.firstElementChild.setAttribute('color-scheme', 'light');
-        //     setThemeValue('light');
-        // }
+        if (themeValue === 'light') {
+            document.firstElementChild.setAttribute('color-scheme', 'dark');
+            setThemeValue('dark');
+        } else {
+            document.firstElementChild.setAttribute('color-scheme', 'light');
+            setThemeValue('light');
+        }
     };
 
     return (

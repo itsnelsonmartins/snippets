@@ -4,7 +4,6 @@ import { ContextApi } from '../ContextApi';
 const SnippetsGrid = ({ data }) => {
     const { search, theme } = useContext(ContextApi);
     const [searchValue, setSearchValue] = search;
-    const [themeValue, setThemeValue] = theme;
 
     const filteredSnippets = searchValue
         ? data.snippets.filter(
@@ -24,7 +23,7 @@ const SnippetsGrid = ({ data }) => {
             {filteredSnippets.map((file, index) => (
                 <div className='column is-4' key={index}>
                     <div className='box'>
-                        <p className='title desc'>{file.name}</p>
+                        <p className='title is-5 desc'>{file.name}</p>
                         <pre className='hasContent'>
                             <code>{file.content}</code>
                         </pre>
