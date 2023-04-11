@@ -1,21 +1,15 @@
-import React, { useState } from 'react';
-import MarkdownGrid from './components/component.MarkdownGrid';
-import Search from './components/component.Search';
-import Footer from './components/component.Footer';
-import Sidebar from './components/component.Sidebar';
-import logo from '/logo.svg';
+import { useContext } from 'react';
+import { ContextApi } from './ContextApi';
+
+import Search from './components/Search.component';
+import Sidebar from './components/Sidebar.component';
+import SnippetsGrid from './components/SnippetsGrid.component';
+
 import snippetsData from './snippets.json';
 
 const App = () => {
-    const [filterInput, setFilterInput] = useState('');
-
-    const handleFilterChange = (e) => {
-        setFilterInput(e.target.value);
-    };
-
-    const handleFilter = (tag) => {
-        setFilterInput(tag);
-    };
+    const { search, theme } = useContext(ContextApi);
+    const [searchValue, setSearchValue] = search;
 
     const tags = snippetsData.snippets
         .flatMap((snippet) => snippet.tags)
@@ -24,17 +18,17 @@ const App = () => {
 
     return (
         <div className='app'>
-            <header>
-                <img src={logo} alt='logo' />
-                <Search value={filterInput} onChange={handleFilterChange} />
-            </header>
-            <div className='container'>
-                <Sidebar tags={tags} handleFilter={handleFilter} />
-                <main>
-                    <MarkdownGrid data={snippetsData} filter={filterInput} />
-                </main>
-            </div>
-            <Footer />
+            <Search />
+            <section className='section'>
+                <div className='columns'>
+                    <div className='column is-1'>
+                        <Sidebar tags={tags} />
+                    </div>
+                    <div className='column is-11'>
+                        <SnippetsGrid data={snippetsData} />
+                    </div>
+                </div>
+            </section>
         </div>
     );
 };
