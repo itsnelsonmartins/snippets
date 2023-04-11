@@ -33,9 +33,13 @@ a.menu-item {
     min-width: 88vw;
 }
 
-pre {
+.hasContent {
     background-color: var(--surface2);
     color: var(--text1);
     border-radius: 0.25rem;
     padding: 1rem;
+}
+
+.box {
+    cursor: pointer;
 }

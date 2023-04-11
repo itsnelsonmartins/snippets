@@ -1,9 +1,17 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { ContextApi } from '../ContextApi';
 
 const SnippetsGrid = ({ data }) => {
-    const { search, theme } = useContext(ContextApi);
+    const { search } = useContext(ContextApi);
     const [searchValue, setSearchValue] = search;
+    const [alertIndex, setAlertIndex] = useState(-1);
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setAlertIndex(-1);
+        }, 500);
+        return () => clearTimeout(timeout);
+    }, [alertIndex]);
 
     const filteredSnippets = searchValue
         ? data.snippets.filter(
@@ -18,12 +26,29 @@ const SnippetsGrid = ({ data }) => {
           )
         : data.snippets;
 
+    const copyCode = (content) => {
+        const code = document.querySelector('.hasContent');
+        navigator.clipboard.writeText(content);
+        // code.style.backgroundColor = 'var(--brand)';
+        // setTimeout(() => {
+        //     code.style.backgroundColor = 'var(--surface2)';
+        // }, '1000');
+    };
+
     return (
         <div className='columns is-multiline'>
             {filteredSnippets.map((file, index) => (
                 <div className='column is-4' key={index}>
-                    <div className='box'>
-                        <p className='title is-5 desc'>{file.name}</p>
+                    <div
+                        className='box'
+                        onClick={() => {
+                            setAlertIndex(index);
+                            copyCode(file.content);
+                        }}>
+                        <p className='title is-5 desc'>
+                            {file.name}
+                            {alertIndex === index && ` Copied!`}
+                        </p>
                         <pre className='hasContent'>
                             <code>{file.content}</code>
                         </pre>
