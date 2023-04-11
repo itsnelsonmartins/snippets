@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { ContextApi } from './ContextApi';
 
-import Search from './components/Search.component';
-import Sidebar from './components/Sidebar.component';
-import SnippetsGrid from './components/SnippetsGrid.component';
+import Search from './components/search.component';
+import Sidebar from './components/sidebar.component';
+import SnippetsGrid from './components/snippetsgrid.component';
 
 import snippetsData from './snippets.json';
 
