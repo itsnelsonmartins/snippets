@@ -27,7 +27,7 @@ const Search = () => {
         <nav className='navbar' role='navigation' aria-label='main navigation'>
             <div className='navbar-brand'>
                 <div className='logo navbar-item'>
-                    <p className='title logo'>Snips!</p>
+                    <p className='title logo'>&lt;snips/&gt;</p>
                 </div>
             </div>
             <div className='navbar-item'>
