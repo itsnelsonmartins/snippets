@@ -1,0 +1,10 @@
+{
+    "extends": ["config:base"],
+    "packageRules": [
+        {
+            "matchUpdateTypes": ["major", "minor", "patch"]
+        }
+    ],
+    "timezone": "Europe/London",
+    "automergeSchedule": ["before 12pm on the first day of the month"]
+}
