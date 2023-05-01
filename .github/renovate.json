@@ -7,8 +7,6 @@
             "automerge": true
         }
     ],
-    "dependencyDashboard": false,
-
     "timezone": "Europe/London",
     "automergeSchedule": ["before 10pm"]
 }
