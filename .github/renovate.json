@@ -7,7 +7,6 @@
             "matchUpdateTypes": ["minor", "patch"],
             "automerge": true,
             "automergeType": "branch",
-            "schedule":["before 10pm"],
         }
     ],
     "dependencyDashboard": false,
