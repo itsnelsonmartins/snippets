@@ -6,10 +6,10 @@
         {
             "matchUpdateTypes": ["minor", "patch"],
             "automerge": true,
-            "automergeType": "branch",
+            "automergeType": "branch"
         }
     ],
     "dependencyDashboard": false,
     "timezone": "Europe/London",
-    "automergeSchedule": ["after 10am"],
+    "automergeSchedule": ["after 10am"]
 }
