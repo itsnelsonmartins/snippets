@@ -1,0 +1,24 @@
+{
+  "timezone": "Europe/London",
+  "extends": [
+    "config:base"
+  ],
+  "schedule": [
+    "after 9am"
+  ],
+  "automergeSchedule": [
+    "after 11am"
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true,
+      "requiredStatusChecks": null
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "requiredStatusChecks": null
+    }
+  ]
+}
